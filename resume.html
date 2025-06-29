@@ -7,126 +7,51 @@
     <title>Mohamed Eid | Resume</title>
 
     <!-- ==================== EXTERNAL FONTS & LIBRARIES ==================== -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <!-- ==================== CUSTOM STYLES ==================== -->
     <style>
-      html {
-        scroll-behavior: smooth;
+      html, body {
+        overflow-x: hidden;
+        width: 100%;
       }
-      html {
-  overflow-x: hidden;
-}
-.absolute {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-      body {
-  overflow-x: hidden;
-}
+      * {
+        box-sizing: border-box;
+      }
       body {
         font-family: "Poppins", sans-serif;
-          background: radial-gradient(circle at top left, #0a7c5e, #07313d 80%);
+        background: radial-gradient(circle at top left, #0a7c5e, #07313d 80%);
         background-size: 200% 200%;
         animation: moveBackground 20s ease infinite;
       }
       @keyframes moveBackground {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
       }
-      .nav-link {
-        color: #d1d5db;
-        transition: color 0.3s ease;
-      }
-      .nav-link:hover {
-        color: #22d3ee;
-      }
-      .nav-link:active,
-      .nav-link.active {
-        color: #0ea5e9;
-        font-weight: 600;
-      }
-      .timeline-point {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 0.6s ease forwards;
-      }
-      .timeline-point:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .timeline-point:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .timeline-point:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      @keyframes fadeInUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .timeline-point::before {
-        transition: transform 0.3s ease, background-color 0.3s ease;
-      }
-      .timeline-point:hover::before {
-        transform: scale(1.4);
-        background-color: #ffffff55;
-      }
+      .nav-link { color: #d1d5db; transition: color 0.3s ease; }
+      .nav-link:hover { color: #22d3ee; }
+      .nav-link:active, .nav-link.active { color: #0ea5e9; font-weight: 600; }
     </style>
   </head>
 
   <body class="text-white min-h-screen flex flex-col">
     <!-- ==================== NAVIGATION BAR ==================== -->
-    <nav
-      class="bg-gray-900 bg-opacity-90 backdrop-blur w-full top-0 z-50 shadow"
-    >
+    <nav class="bg-gray-900 bg-opacity-90 backdrop-blur w-full top-0 z-50 shadow">
       <div class="w-full px-4">
         <div class="flex items-center justify-between h-16">
-          <!-- Logo -->
           <div class="flex-shrink-0">
-            <a href="index.html" class="text-white text-xl font-bold"
-              >Mohamed Eid</a
-            >
+            <a href="index.html" class="text-white text-xl font-bold">Mohamed Eid</a>
           </div>
-
-          <!-- Desktop Navigation Links -->
-          <div
-class="hidden md:flex md:absolute md:left-1/2 md:transform md:-translate-x-1/2 space-x-4">
-            <a
-              href="index.html"
-              class="nav-link px-3 py-2 rounded-md text-base font-medium"
-              >Home</a
-            >
-            <a
-              href="resume.html"
-              class="nav-link active px-3 py-2 rounded-md text-base font-medium"
-              >Resume</a
-            >
-<a href="summaries.html" class="nav-link px-3 py-2 rounded-md text-base font-medium">Summaries</a>
-
+          <div class="hidden md:flex md:absolute md:left-1/2 md:transform md:-translate-x-1/2 space-x-4">
+            <a href="index.html" class="nav-link px-3 py-2 rounded-md text-base font-medium">Home</a>
+            <a href="resume.html" class="nav-link active px-3 py-2 rounded-md text-base font-medium">Resume</a>
+            <a href="summaries.html" class="nav-link px-3 py-2 rounded-md text-base font-medium">Summaries</a>
           </div>
-
-          <!-- Mobile Hamburger Menu Button -->
           <div class="md:hidden">
             <button id="nav-toggle" class="text-gray-300 focus:outline-none">
               <i class="fa-solid fa-bars fa-lg"></i>
@@ -135,26 +60,10 @@ class="hidden md:flex md:absolute md:left-1/2 md:transform md:-translate-x-1/2 s
         </div>
       </div>
 
-      <!-- Mobile Navigation Menu -->
-      <div
-        id="nav-menu"
-        class="hidden md:hidden flex flex-col space-y-2 bg-gray-900 px-4 py-4"
-      >
-        <a
-          href="index.html"
-          class="nav-link px-3 py-2 rounded-md text-base font-medium"
-          >Home</a
-        >
-        <a
-          href="resume.html"
-          class="nav-link active px-3 py-2 rounded-md text-base font-medium"
-          >Resume</a
-        >
-        <a
-          href="summaries.html"
-          class="nav-link px-3 py-2 rounded-md text-base font-medium"
-          >summaries</a
-        >
+      <div id="nav-menu" class="hidden md:hidden flex flex-col space-y-2 bg-gray-900 px-4 py-4">
+        <a href="index.html" class="nav-link px-3 py-2 rounded-md text-base font-medium">Home</a>
+        <a href="resume.html" class="nav-link active px-3 py-2 rounded-md text-base font-medium">Resume</a>
+        <a href="summaries.html" class="nav-link px-3 py-2 rounded-md text-base font-medium">Summaries</a>
       </div>
     </nav>
 
@@ -168,86 +77,52 @@ class="hidden md:flex md:absolute md:left-1/2 md:transform md:-translate-x-1/2 s
     </script>
 
     <!-- ==================== MAIN CONTENT SECTION ==================== -->
-    <section class="max-w-5xl mx-auto px-4 py-16">
+    <section class="max-w-5xl w-full mx-auto px-4 py-16 overflow-hidden">
       <div class="relative min-h-[1500px]">
-        <!-- Vertical timeline line, Vertical Line height change 500px -->
-<!-- PC timeline line -->
-<div class="absolute left-5 top-20 w-0.5 bg-gray-500 opacity-70 z-0 hidden sm:block"
-     style="height: calc(100% + 1810px);"></div>
 
-<!-- Mobile timeline line -->
-<div class="absolute left-5 w-0.5 bg-gray-500 opacity-70 z-0 block sm:hidden"
-     style="top: 100px; height: 5600px;"></div>
+        <!-- Vertical timeline lines -->
+        <div class="absolute left-2 sm:left-5 top-20 w-0.5 bg-gray-500 opacity-70 z-0 hidden sm:block" style="height: calc(100% + 1810px);"></div>
+        <div class="absolute left-2 sm:left-5 w-0.5 bg-gray-500 opacity-70 z-0 block sm:hidden" style="top: 100px; height: 5600px;"></div>
 
-        <!-- ✅ Download CV button centered above Profile Summary -->
+        <!-- ✅ Download CV button -->
         <div class="flex justify-center -mt-4 mb-8">
-          <a
-            href="assets/cv.pdf"
-            download
-            class="download-btn inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
-          >
+          <a href="assets/cv.pdf" download class="download-btn inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
             <i class="fa-solid fa-download mr-2"></i> Download CV
           </a>
         </div>
-<!-- ========== PROFILE SUMMARY CARD ========== -->
-<div class="bg-gray-900 border border-gray-700 rounded-lg shadow-lg px-6 py-4 flex justify-between items-center mb-8 relative z-10 ml-2 sm:ml-4 transform scale-100 transition-transform duration-300 sm:hover:scale-105 w-full overflow-hidden">
-  <div class="text-left">
-    <h3
-      class="text-xl font-bold text-blue-400 flex items-center gap-2 transform transition-transform duration-300 hover:scale-105"
-    >
-      <i class="fa-solid fa-user text-yellow-400"></i> Profile Summary
-    </h3>
-  </div>
-</div>
+
+        <!-- ========== PROFILE SUMMARY CARD ========== -->
+        <div class="bg-gray-900 border border-gray-700 rounded-lg shadow-lg px-6 py-4 flex flex-wrap justify-between items-center mb-8 relative z-10 w-full overflow-hidden">
+          <div class="text-left w-full">
+            <h3 class="text-xl font-bold text-blue-400 flex items-center gap-2">
+              <i class="fa-solid fa-user text-yellow-400"></i> Profile Summary
+            </h3>
+          </div>
+        </div>
 
         <!-- Profile Summary Content -->
-<div class="pl-4 sm:pl-12">
-          <ul
-            data-aos="fade"
-            class="text-gray-300 text-base space-y-2 pb-6 relative z-10"
-          >
-            <li
-              class="timeline-point relative pl-4 before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
-            >
-              <p class="text-sm text-gray-300 mt-1 leading-snug">
+        <div class="pl-2 sm:pl-12">
+          <ul data-aos="fade" class="text-gray-300 text-base space-y-2 pb-6 relative z-10">
+            <li class="timeline-point relative pl-4 before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-gray-500">
+              <p class="text-sm text-gray-300 mt-1 leading-snug break-words">
                 Cloud Engineer with practical experience in managing
-                <span class="text-yellow-400 font-semibold"
-                  >cloud infrastructure</span
-                >
-                and
-                <span class="text-gray-200 font-semibold"
-                  >Linux-based systems</span
-                >
-                in production environments.
+                <span class="text-yellow-400 font-semibold">cloud infrastructure</span>
+                and <span class="text-gray-200 font-semibold">Linux-based systems</span> in production environments.
                 <br /><br />
                 Skilled in implementing and maintaining
-                <span class="text-green-400 font-semibold"
-                  >scalable, secure architectures</span
-                >
+                <span class="text-green-400 font-semibold">scalable, secure architectures</span>
                 on Cloud, handling
-                <span class="text-purple-400 font-semibold"
-                  >system administration tasks</span
-                >, and implementing automated
-                <span class="text-pink-400 font-semibold"
-                  >backup and monitoring solutions</span
-                >. <br /><br />
+                <span class="text-purple-400 font-semibold">system administration tasks</span>, and implementing automated
+                <span class="text-pink-400 font-semibold">backup and monitoring solutions</span>.
+                <br /><br />
                 Apply DevOps principles such as
                 <span class="text-pink-400 font-semibold">automation</span>,
                 <span class="text-pink-400 font-semibold">scripting</span>,
-                <span class="text-pink-400 font-semibold">version control</span
-                >, and
-                <span class="text-pink-400 font-semibold"
-                  >system reliability</span
-                >
-                across daily operations.
+                <span class="text-pink-400 font-semibold">version control</span>, and
+                <span class="text-pink-400 font-semibold">system reliability</span> across daily operations.
                 <br /><br />
-                <span class="text-red-400 font-semibold">Passionate</span>
-                about infrastructure as code and continuous improvement, and
-                actively pursuing a transition into a dedicated
-                <span class="text-yellow-400 font-semibold"
-                  >DevOps Engineer</span
-                >
-                role.
+                <span class="text-red-400 font-semibold">Passionate</span> about infrastructure as code and continuous improvement, and actively pursuing a transition into a dedicated
+                <span class="text-yellow-400 font-semibold">DevOps Engineer</span> role.
               </p>
             </li>
           </ul>
