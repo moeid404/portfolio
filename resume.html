@@ -26,6 +26,12 @@
       html {
         scroll-behavior: smooth;
       }
+      html {
+  overflow-x: hidden;
+}
+      body {
+  overflow-x: hidden;
+}
       body {
         font-family: "Poppins", sans-serif;
           background: radial-gradient(circle at top left, #0a7c5e, #07313d 80%);
@@ -101,8 +107,7 @@
 
           <!-- Desktop Navigation Links -->
           <div
-            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-4"
-          >
+class="hidden md:flex md:absolute md:left-1/2 md:transform md:-translate-x-1/2 space-x-4">
             <a
               href="index.html"
               class="nav-link px-3 py-2 rounded-md text-base font-medium"
