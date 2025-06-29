@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ==================== META TAGS ==================== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohamed Eid | Resume</title>
+
+    <!-- ==================== EXTERNAL FONTS & LIBRARIES ==================== -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- ==================== CUSTOM STYLES ==================== -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+          background: radial-gradient(circle at top left, #0a7c5e, #07313d 80%);
+        background-size: 200% 200%;
+        animation: moveBackground 20s ease infinite;
+      }
+      @keyframes moveBackground {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .nav-link {
+        color: #d1d5db;
+        transition: color 0.3s ease;
+      }
+      .nav-link:hover {
+        color: #22d3ee;
+      }
+      .nav-link:active,
+      .nav-link.active {
+        color: #0ea5e9;
+        font-weight: 600;
+      }
+      .timeline-point {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
+      }
+      .timeline-point:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .timeline-point:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .timeline-point:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .timeline-point::before {
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+      .timeline-point:hover::before {
+        transform: scale(1.4);
+        background-color: #ffffff55;
+      }
+    </style>
+  </head>
+
+  <body class="text-white min-h-screen flex flex-col">
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <nav
+      class="bg-gray-900 bg-opacity-90 backdrop-blur w-full top-0 z-50 shadow"
+    >
+      <div class="w-full px-4">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <a href="index.html" class="text-white text-xl font-bold"
+              >Mohamed Eid</a
+            >
+          </div>
+
+          <!-- Desktop Navigation Links -->
+          <div
+            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-4"
+          >
+            <a
+              href="index.html"
+              class="nav-link px-3 py-2 rounded-md text-base font-medium"
+              >Home</a
+            >
+            <a
+              href="resume.html"
+              class="nav-link active px-3 py-2 rounded-md text-base font-medium"
+              >Resume</a
+            >
+            <a
+              href="blog.html"
+              class="nav-link px-3 py-2 rounded-md text-base font-medium"
+              >Blog</a
+            >
+          </div>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <div class="md:hidden">
+            <button id="nav-toggle" class="text-gray-300 focus:outline-none">
+              <i class="fa-solid fa-bars fa-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div
+        id="nav-menu"
+        class="hidden md:hidden flex flex-col space-y-2 bg-gray-900 px-4 py-4"
+      >
+        <a
+          href="index.html"
+          class="nav-link px-3 py-2 rounded-md text-base font-medium"
+          >Home</a
+        >
+        <a
+          href="resume.html"
+          class="nav-link active px-3 py-2 rounded-md text-base font-medium"
+          >Resume</a
+        >
+        <a
+          href="blog.html"
+          class="nav-link px-3 py-2 rounded-md text-base font-medium"
+          >Blog</a
+        >
+      </div>
+    </nav>
+
+    <!-- ==================== NAVIGATION TOGGLE SCRIPT ==================== -->
+    <script>
+      const navToggle = document.getElementById("nav-toggle");
+      const navMenu = document.getElementById("nav-menu");
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("hidden");
+      });
+    </script>
+
+    <!-- ==================== MAIN CONTENT SECTION ==================== -->
+    <section class="max-w-5xl mx-auto px-4 py-16">
+      <div class="relative min-h-[1500px]">
+        <!-- Vertical timeline line, Vertical Line height change 500px -->
+<!-- PC timeline line -->
+<div class="absolute left-5 top-20 w-0.5 bg-gray-500 opacity-70 z-0 hidden sm:block"
+     style="height: calc(100% + 1810px);"></div>
+
+<!-- Mobile timeline line -->
+<div class="absolute left-5 w-0.5 bg-gray-500 opacity-70 z-0 block sm:hidden"
+     style="top: 100px; height: 5600px;"></div>
+
+        <!-- ✅ Download CV button centered above Profile Summary -->
+        <div class="flex justify-center -mt-4 mb-8">
+          <a
+            href="assets/cv.pdf"
+            download
+            class="download-btn inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+          >
+            <i class="fa-solid fa-download mr-2"></i> Download CV
+          </a>
+        </div>
+        <!-- ========== PROFILE SUMMARY CARD ========== -->
+        <div
+          class="bg-gray-900 border border-gray-700 rounded-lg shadow-lg px-6 py-4 flex justify-between items-center mb-8 relative z-10 ml-4 transform scale-100 transition-transform duration-300 hover:scale-105"
+        >
+          <div class="text-left">
+            <h3
+              class="text-xl font-bold text-blue-400 flex items-center gap-2 transform transition-transform duration-300 hover:scale-105"
+            >
+              <i class="fa-solid fa-user text-yellow-400"></i> Profile Summary
+            </h3>
+          </div>
+        </div>
+
+        <!-- Profile Summary Content -->
+
+        <div class="pl-12">
+          <ul
+            data-aos="fade"
+            class="text-gray-300 text-base space-y-2 pb-6 relative z-10"
+          >
+            <li
+              class="timeline-point relative pl-4 before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+            >
+              <p class="text-sm text-gray-300 mt-1 leading-snug">
+                Cloud Engineer with practical experience in managing
+                <span class="text-yellow-400 font-semibold"
+                  >cloud infrastructure</span
+                >
+                and
+                <span class="text-gray-200 font-semibold"
+                  >Linux-based systems</span
+                >
+                in production environments.
+                <br /><br />
+                Skilled in implementing and maintaining
+                <span class="text-green-400 font-semibold"
+                  >scalable, secure architectures</span
+                >
+                on Cloud, handling
+                <span class="text-purple-400 font-semibold"
+                  >system administration tasks</span
+                >, and implementing automated
+                <span class="text-pink-400 font-semibold"
+                  >backup and monitoring solutions</span
+                >. <br /><br />
+                Apply DevOps principles such as
+                <span class="text-pink-400 font-semibold">automation</span>,
+                <span class="text-pink-400 font-semibold">scripting</span>,
+                <span class="text-pink-400 font-semibold">version control</span
+                >, and
+                <span class="text-pink-400 font-semibold"
+                  >system reliability</span
+                >
+                across daily operations.
+                <br /><br />
+                <span class="text-red-400 font-semibold">Passionate</span>
+                about infrastructure as code and continuous improvement, and
+                actively pursuing a transition into a dedicated
+                <span class="text-yellow-400 font-semibold"
+                  >DevOps Engineer</span
+                >
+                role.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ========== EDUCATION CARD ========== -->
+        <div
+          class="bg-gray-900 border border-gray-700 rounded-lg shadow-lg px-6 py-4 flex justify-between items-center mb-4 relative z-10 ml-4 transform transition-transform duration-300 hover:scale-105"
+        >
+          <div class="text-left">
+            <h3
+              class="text-xl font-bold text-blue-400 flex items-center gap-2 transform transition-transform duration-300 hover:scale-105"
+            >
+              <i class="fa-solid fa-graduation-cap text-yellow-400"></i>
+              Education
+            </h3>
+          </div>
+        </div>
+
+        <!-- Education Content -->
+        <div class="pl-12">
+          <ul
+            data-aos="fade"
+            class="text-gray-300 text-base space-y-6 pb-6 relative z-10"
+          >
+            <li
+              class="timeline-point relative pl-4 before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+            >
+              <p class="text-sm text-gray-300 mt-1">
+                <span class="text-white font-semibold"
+                  >Faculty of Engineering, Zagazig University</span
+                ><br />
+                Bachelor's Degree in
+                <span class="text-blue-400">Mechanical Engineering</span>
+                <span class="text-gray-400">(Good)</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ========== PROFESSIONAL EXPERIENCE CARD ========== -->
+        <div
+          class="bg-gray-900 border border-gray-700 rounded-lg shadow-lg px-6 py-4 flex justify-between items-center mb-4 relative z-10 ml-4 transform transition-transform duration-300 hover:scale-105"
+        >
+          <div class="text-left">
+            <h3
+              class="text-xl font-bold text-blue-400 flex items-center gap-2 transform transition-transform duration-300 hover:scale-105"
+            >
+              <i class="fa-solid fa-briefcase text-yellow-400"></i> Professional
+              Experience
+            </h3>
+          </div>
+        </div>
+        <ul
+          data-aos="fade-in"
+          class="text-gray-300 text-base space-y-6 pb-6 relative z-10"
+        >
+          <div class="relative ml-8 pl-4">
+            <!-- الخط الطولي الكامل -->
+            <div
+              class="absolute top-0 bottom-0 left-0 w-0.5 bg-yellow-400"
+            ></div>
+
+            <!-- محتوى الشركة والتاريخ -->
+            <div>
+              <p class="text-yellow-300 font-bold mb-1 flex items-center">
+                <i class="fa-solid fa-building mr-2"></i>
+                Mazloum For Integrated Systems (MIS) — Cairo, Egypt
+              </p>
+              <p class="text-cyan-300 text-xs flex items-center ml-6">
+                <i class="fa-regular fa-calendar-days mr-1"></i> 2025/01 –
+                Present
+              </p>
+            </div>
+          </div>
+
+          <li
+            class="timeline-point relative pl-16 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <i class="fa-solid fa-cloud mr-2 text-blue-400"></i>Deployed the
+            full cloud infrastructure on Huawei Cloud using VPC, ELB, ASG, RDS,
+            Redis, SFS, and OBS, implementing the architecture end-to-end.
+          </li>
+          <li
+            class="timeline-point relative pl-16 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <i class="fa-solid fa-vial mr-2 text-green-400"></i>Built and
+            validated both test and production environments.
+          </li>
+          <li
+            class="timeline-point relative pl-16 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <i class="fa-solid fa-upload mr-2 text-purple-400"></i>Handled
+            migration, deployment, and version upgrades for the managed
+            application.
+          </li>
+          <li
+            class="timeline-point relative pl-16 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <i class="fa-solid fa-globe mr-2 text-yellow-400"></i>Registered
+            domain names and integrated them with Cloudflare, configuring DNS
+            records and connecting them to the cloud Load Balancer for secure
+            and efficient traffic routing.
+          </li>
+          <li
+            class="timeline-point relative pl-16 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <i class="fa-solid fa-shield-halved mr-2 text-red-400"></i>Applied
+            unified security hardening across all servers, including:
+            <ul class="list-disc list-inside ml-6 space-y-2 mt-2 text-gray-400">
+              <li><strong>Network-level</strong>: NACLs and Security Groups</li>
+              <li>
+                <strong>OS-level</strong>: iptables firewall rules and RKHunter
+                for rootkit detection.
+              </li>
+            </ul>
+          </li>
+          <li
+            class="timeline-point relative pl-16 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <i class="fa-solid fa-envelope mr-2 text-pink-400"></i>Configured
+            and managed the mailing system using Postfix and SendGrid, including
+            full DNS setup (SPF, DKIM, DMARC) via Cloudflare to ensure reliable
+            email deliverability.
+          </li>
+          <li
+            class="timeline-point relative pl-16 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <i class="fa-solid fa-lock mr-2 text-yellow-300"></i>Developed an
+            automated, GPG-encrypted backup system with daily local and remote
+            OBS storage, structured logging, naming conventions, disk space
+            alerts, local cleanup rotation, and lifecycle policies for cloud
+            storage.
+          </li>
+          <li
+            class="timeline-point relative pl-16 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <i class="fa-solid fa-chart-line mr-2 text-indigo-400"></i>Enabled
+            server monitoring using Cloud Eye metrics, threshold alerts, and
+            custom access logging scripts for detailed insights.
+          </li>
+          <li
+            class="timeline-point relative pl-16 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <i class="fa-solid fa-book mr-2 text-gray-300"></i>Authored clear
+            and comprehensive documentation for all projects, including the
+            backup system, ASG image updates, disaster recovery procedures, and
+            operational workflows.
+          </li>
+          <li
+            class="timeline-point relative pl-16 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <i class="fa-solid fa-code mr-2 text-green-400"></i>Created and
+            maintained reusable Ansible playbooks for provisioning, system
+            hardening, service deployment, and backup automation, ensuring
+            consistent and reproducible configurations.
+          </li>
+          <li
+            class="timeline-point relative pl-16 before:absolute before:left-0 before:top-1.5 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <i class="fa-solid fa-cubes mr-2 text-purple-300"></i>Designed and
+            implemented Terraform modules to automate infrastructure
+            provisioning with scalable, modular, and reusable components.
+          </li>
+        </ul>
+      </div>
+
+      <!-- ========== PROJECTS CARD ========== -->
+      <div
+        class="bg-gray-900 border border-gray-700 rounded-lg shadow-lg px-6 py-4 flex justify-between items-center mb-4 relative z-10 ml-4 transform transition-transform duration-300 hover:scale-105"
+      >
+        <div class="text-left">
+          <h3
+            class="text-xl font-bold text-blue-400 flex items-center gap-2 transform transition-transform duration-300 hover:scale-105"
+          >
+            <i class="fa-solid fa-diagram-project text-yellow-400"></i> Projects
+          </h3>
+        </div>
+      </div>
+
+      <!-- Projects Content -->
+      <div class="pl-12">
+        <ul
+          data-aos="fade"
+          class="text-gray-300 text-base space-y-6 pb-6 relative z-10"
+        >
+          <!-- Project Category: Alohadot -->
+          <li
+            class="timeline-point relative pl-4 before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <h4 class="text-lg font-bold text-blue-400 mb-2">
+              <i class="fa-solid fa-globe mr-2"></i> Alohadot
+            </h4>
+            <ul class="list-disc list-inside ml-4 space-y-1">
+              <li>
+                <a
+                  href="https://alohadot.com"
+                  class="text-blue-400 hover:underline"
+                  target="_blank"
+                  >alohadot.com</a
+                >
+                (Dotchat Application)
+              </li>
+              <li>
+                <a
+                  href="https://manage.alohadot.com"
+                  class="text-blue-400 hover:underline"
+                  target="_blank"
+                  >manage.alohadot.com</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://resturant-web-panel.alohadot.com"
+                  class="text-blue-400 hover:underline"
+                  target="_blank"
+                  >resturant-web-panel.alohadot.com</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://mega-merchants.alohadot.com"
+                  class="text-blue-400 hover:underline"
+                  target="_blank"
+                  >mega-merchants.alohadot.com</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- Project Category: Mazloum -->
+          <li
+            class="timeline-point relative pl-4 before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <h4 class="text-lg font-bold text-green-400 mb-2">
+              <i class="fa-solid fa-building mr-2"></i> Mazloum
+            </h4>
+            <ul class="list-disc list-inside ml-4 space-y-1">
+              <li>
+                <a
+                  href="https://mazloumhome.com"
+                  class="text-green-400 hover:underline"
+                  target="_blank"
+                  >mazloumhome.com</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://mazloumlight.com"
+                  class="text-green-400 hover:underline"
+                  target="_blank"
+                  >mazloumlight.com</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://mazloumagri.com"
+                  class="text-green-400 hover:underline"
+                  target="_blank"
+                  >mazloumagri.com</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- DevOps Hands-on Projects -->
+          <li
+            class="timeline-point relative pl-4 before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <h4 class="text-lg font-bold text-yellow-400 mb-2">
+              <i class="fa-solid fa-diagram-project mr-2"></i> DevOps &
+              Infrastructure Projects
+            </h4>
+            <ul class="list-disc list-inside ml-4 space-y-1">
+              <li>
+                <a
+                  href="https://github.com/moeid404/WeatherApp"
+                  target="_blank"
+                  class="hover:text-yellow-300 hover:underline"
+                  >Kubernetes-based microservices architecture for a weather
+                  app</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/moeid404/wp-lemp-docker"
+                  target="_blank"
+                  class="hover:text-yellow-300 hover:underline"
+                  >LEMP Stack WordPress Deployment with Containers and SSL</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/moeid404/CI-CD-k8s-GithubActions-Prometheus"
+                  target="_blank"
+                  class="hover:text-yellow-300 hover:underline"
+                  >CI/CD Pipeline with Monitoring – GitHub Actions,
+                  Kubernetes</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/moeid404/CI-CD-terraform-ansible-docker-prometheus"
+                  target="_blank"
+                  class="hover:text-yellow-300 hover:underline"
+                  >CI/CD Pipeline with Monitoring – Jenkins</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/moeid404/aws-terraform-vpc-alb-asg"
+                  target="_blank"
+                  class="hover:text-yellow-300 hover:underline"
+                  >AWS Infrastructure with Terraform</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- Community Contribution -->
+          <li
+            class="timeline-point relative pl-4 before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-gray-500"
+          >
+            <h4 class="text-lg font-bold text-pink-400 mb-2">
+              <i class="fa-solid fa-users mr-2"></i> Community Contribution
+            </h4>
+            <p class="ml-4">
+              Published AWS Solutions Architect summaries on
+              <a
+                href="https://library.eqraatech.com/b/6HARb"
+                class="text-pink-400 hover:underline"
+                target="_blank"
+                >Eqraa Tech</a
+              >, a specialized technical knowledge-sharing platform.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ========== SKILLS CARD ========== -->
+      <div
+        class="bg-gray-900 border border-gray-700 rounded-lg shadow-lg px-6 py-4 flex justify-between items-center mb-4 relative z-10 ml-4 transform transition-transform duration-300 hover:scale-105"
+      >
+        <div class="text-left">
+          <h3
+            class="text-xl font-bold text-blue-400 flex items-center gap-2 transform transition-transform duration-300 hover:scale-105"
+          >
+            <i class="fa-solid fa-wrench text-yellow-400"></i> Skills
+          </h3>
+        </div>
+      </div>
+
+      <!-- Skills Content  -->
+      <div class="pl-12">
+        <div
+          data-aos="fade"
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 pb-6 relative z-10"
+        >
+          <!-- Cloud -->
+          <div
+            class="timeline-point relative pl-4 before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-gray-500 transition transform hover:scale-105 bg-gradient-to-r from-blue-700 to-blue-800 hover:from-blue-600 hover:to-blue-700 p-4 rounded-lg text-left"
+          >
+            <h3 class="text-xl font-bold text-blue-200 mb-2">
+              <i class="fa-solid fa-cloud mr-2"></i> Cloud Computing
+            </h3>
+            <p class="text-gray-200">
+              AWS, Huawei Cloud, DigitalOcean, Cloudflare
+            </p>
+          </div>
+
+          <!-- Containers & GitOps -->
+          <div
+            class="timeline-point relative pl-4 before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-gray-500 transition transform hover:scale-105 bg-gradient-to-r from-green-700 to-green-800 hover:from-green-600 hover:to-green-700 p-4 rounded-lg text-left"
+          >
+            <h3 class="text-xl font-bold text-green-200 mb-2">
+              <i class="fa-brands fa-docker mr-2"></i> Containers & GitOps
+            </h3>
+            <p class="text-gray-200">
+              Docker, Kubernetes, ArgoCD, Kustomize, Helm
+            </p>
+          </div>
+
+          <!-- CI/CD -->
+          <div
+            class="timeline-point relative pl-4 before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-gray-500 transition transform hover:scale-105 bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-500 hover:to-yellow-600 p-4 rounded-lg text-left"
+          >
+            <h3 class="text-xl font-bold text-yellow-200 mb-2">
+              <i class="fa-solid fa-gear mr-2"></i> CI/CD
+            </h3>
+            <p class="text-gray-200">
+              GitHub Actions, Jenkins, GitLab CI, AWS CodePipeline
+            </p>
+          </div>
+
+          <!-- Monitoring -->
+          <div
+            class="timeline-point relative pl-4 before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-gray-500 transition transform hover:scale-105 bg-gradient-to-r from-pink-700 to-pink-800 hover:from-pink-600 hover:to-pink-700 p-4 rounded-lg text-left"
+          >
+            <h3 class="text-xl font-bold text-pink-200 mb-2">
+              <i class="fa-solid fa-chart-line mr-2"></i> Logs & Monitoring
+            </h3>
+            <p class="text-gray-200">Prometheus, Grafana</p>
+          </div>
+
+          <!-- Linux & Web Servers -->
+          <div
+            class="timeline-point relative pl-4 before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-gray-500 transition transform hover:scale-105 bg-gradient-to-r from-indigo-700 to-indigo-800 hover:from-indigo-600 hover:to-indigo-700 p-4 rounded-lg text-left"
+          >
+            <h3 class="text-xl font-bold text-indigo-200 mb-2">
+              <i class="fa-solid fa-server mr-2"></i> OS & Web Servers
+            </h3>
+            <p class="text-gray-200">Linux Debian (Ubuntu), Nginx, Apache</p>
+          </div>
+
+          <!-- Automation & Scripting -->
+          <div
+            class="timeline-point relative pl-4 before:absolute before:left-0 before:top-1 before:w-3 before:h-3 before:rounded-full before:bg-gray-500 transition transform hover:scale-105 bg-gradient-to-r from-purple-700 to-purple-800 hover:from-purple-600 hover:to-purple-700 p-4 rounded-lg text-left"
+          >
+            <h3 class="text-xl font-bold text-purple-200 mb-2">
+              <i class="fa-solid fa-code mr-2"></i> Automation & Scripting
+            </h3>
+            <p class="text-gray-200">Terraform, Ansible, Python, Bash</p>
+          </div>
+        </div>
+      </div>
+
+
+      
+<!-- ========== CERTIFICATES & COURSES CARD ========== -->
+<div class="bg-gray-900 border border-gray-700 rounded-lg shadow-lg px-6 py-4 flex justify-between items-center mb-4 relative z-10 ml-4 transform transition-transform duration-300 hover:scale-105 ">
+
+          <div class="text-left">
+            <h3
+              class="text-xl font-bold text-blue-400 flex items-center gap-2 transform transition-transform duration-300 hover:scale-105"
+            >
+              <i class="fa-solid fa-user text-yellow-400"></i> Certificates & Courses
+            </h3>
+          </div>
+        </div>
+
+
+<!-- Certificates & Courses Content -->
+<div class="pl-12">
+  <ul data-aos="fade" class="text-gray-300 text-base space-y-6 pb-6 relative z-10">
+
+    <!-- AWS SAA -->
+    <li class="timeline-point relative pl-4 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-gray-500">
+      <div class="flex items-start justify-between p-4 rounded-md bg-gray-800 bg-opacity-80 transition-transform duration-300 transform hover:scale-105 hover:bg-gray-700 shadow-md">
+        <div class="flex items-start gap-3">
+          <i class="fa-brands fa-aws text-yellow-400 text-2xl mt-1 animate-pulse"></i>
+          <div>
+            <div class="flex items-center gap-2">
+              <strong class="text-white">AWS Certified Solutions Architect – Associate (SAA-C03)</strong>
+              <span class="text-green-400 text-sm bg-green-900 px-2 py-0.5 rounded-full flex items-center gap-1">
+                <i class="fa-solid fa-check-circle"></i> Certified
+              </span>
+            </div>
+            <div class="text-sm text-gray-400">Issued: March 05, 2025 by Amazon Web Services (AWS)</div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- AWS Practitioner -->
+    <li class="timeline-point relative pl-4 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-gray-500">
+<div class="flex items-start justify-between p-4 rounded-md bg-gray-800 bg-opacity-80 transition-transform duration-300 transform hover:scale-105 hover:bg-gray-700 shadow-md">        <div class="flex items-start gap-3">
+          <i class="fa-brands fa-aws text-yellow-400 text-2xl mt-1 animate-pulse"></i>
+          <div>
+            <div class="flex items-center gap-2">
+              <strong class="text-white">AWS Certified Cloud Practitioner</strong>
+              <span class="text-green-400 text-sm bg-green-900 px-2 py-0.5 rounded-full flex items-center gap-1">
+                <i class="fa-solid fa-check-circle"></i> Certified
+              </span>
+            </div>
+            <div class="text-sm text-gray-400">Issued: March 05, 2025 by Amazon Web Services (AWS)</div>
+          </div>
+        </div>
+        <a href="https://www.credly.com/badges/bb54da78-d5cc-4277-b57e-611071b44eea/public_url" target="_blank" class="text-white hover:text-yellow-300">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </li>
+
+    <!-- Huawei Course -->
+    <li class="timeline-point relative pl-4 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-gray-500">
+<div class="flex items-start justify-between p-4 rounded-md bg-gray-800 bg-opacity-80 transition-transform duration-300 transform hover:scale-105 hover:bg-gray-700 shadow-md">        <div class="flex items-start gap-3">
+          <i class="fa-solid fa-cloud text-blue-400 text-2xl mt-1 animate-bounce"></i>
+          <div>
+            <div class="flex items-center gap-2">
+              <strong class="text-white">Huawei Certified Cloud Dev Associate</strong>
+              <span class="text-green-400 text-sm bg-green-900 px-2 py-0.5 rounded-full flex items-center gap-1">
+                <i class="fa-solid fa-check-circle"></i> Certified
+              </span>
+            </div>
+            <div class="text-sm text-gray-400">Issued by Huawei</div>
+          </div>
+        </div>
+        <a href="https://drive.google.com/file/d/1Laynm2iMfnkun53uFaJgmYDXuFGINBQX/view" target="_blank" class="text-white hover:text-yellow-300">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </li>
+
+    <!-- RHCSA -->
+    <li class="timeline-point relative pl-4 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-gray-500">
+<div class="flex items-start justify-between p-4 rounded-md bg-gray-800 bg-opacity-80 transition-transform duration-300 transform hover:scale-105 hover:bg-gray-700 shadow-md">        <div class="flex items-start gap-3">
+          <i class="fa-brands fa-redhat text-red-400 text-2xl mt-1 animate-bounce"></i>
+          <div>
+            <strong class="text-white">Linux Administration - RHCSA</strong>
+            <div class="text-sm text-gray-400">Solidified my practical Linux skills with hands-on RHCSA training on system operations, storage, users, and networking</div>
+          </div>
+        </div>
+        <a href="https://learn.kodekloud.com/certificate/090f334e-e00e-45cc-9243-f33a36333f41" target="_blank" class="text-white hover:text-yellow-300">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </li>
+
+    <!-- Ansible -->
+    <li class="timeline-point relative pl-4 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-gray-500">
+<div class="flex items-start justify-between p-4 rounded-md bg-gray-800 bg-opacity-80 transition-transform duration-300 transform hover:scale-105 hover:bg-gray-700 shadow-md">        <div class="flex items-start gap-3">
+          <i class="fa-solid fa-gears text-orange-400 text-2xl mt-1 animate-spin"></i>
+          <div>
+            <strong class="text-white">Ansible Advanced Course</strong>
+            <div class="text-sm text-gray-400">Gained practical skills in Ansible roles, vault, dynamic inventories & Jinja2 templating</div>
+          </div>
+        </div>
+        <a href="https://learn.kodekloud.com/certificate/a9b9c1a6-b378-4b64-9776-3c910ec027c6" target="_blank" class="text-white hover:text-yellow-300">
+          <i class="fa-solid fa-arrow-up-right-from-square animate-pulse"></i>
+        </a>
+      </div>
+    </li>
+
+    <!-- Kubernetes -->
+    <li class="timeline-point relative pl-4 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-gray-500">
+<div class="flex items-start justify-between p-4 rounded-md bg-gray-800 bg-opacity-80 transition-transform duration-300 transform hover:scale-105 hover:bg-gray-700 shadow-md">        <div class="flex items-start gap-3">
+          <i class="fa-solid fa-boxes-stacked text-indigo-400 text-2xl mt-1 animate-bounce"></i>
+          <div>
+            <strong class="text-white">Kubernetes from Beginner to Master</strong>
+            <div class="text-sm text-gray-400">Studied Kubernetes architecture, workloads, storage, and RBAC through hands-on labs</div>
+          </div>
+        </div>
+        <a href="https://www.udemy.com/certificate/UC-46a88184-6541-43f9-b194-3d0ffdaa56a4/" target="_blank" class="text-white hover:text-yellow-300">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </li>
+
+    <!-- ArgoCD -->
+    <li class="timeline-point relative pl-4 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-gray-500">
+<div class="flex items-start justify-between p-4 rounded-md bg-gray-800 bg-opacity-80 transition-transform duration-300 transform hover:scale-105 hover:bg-gray-700 shadow-md">        <div class="flex items-start gap-3">
+          <i class="fa-solid fa-code-branch text-purple-400 text-2xl mt-1 animate-pulse"></i>
+          <div>
+            <strong class="text-white">Mastering GitOps With ArgoCD</strong>
+            <div class="text-sm text-gray-400">Studied GitOps workflows, Argo CD setup, app synchronization, rollback, and advanced deployment strategies</div>
+          </div>
+        </div>
+        <a href="https://www.udemy.com/certificate/UC-1322d977-c3ab-42ff-a58a-3e1a23c09bc0/" target="_blank" class="text-white hover:text-yellow-300">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </li>
+
+  </ul>
+</div>
+
+<!-- Funny Running Icon -->
+<div class="flex flex-col items-center justify-center mt-8">
+  <i class="fa-solid fa-person-running text-yellow-400 text-4xl animate-bounce mb-2"></i>
+  <p class="text-gray-400">Still running after more certificates...</p>
+</div>
+
+
+</section>
+
+
+
+
+      
+    </section>
+    <!-- ✅ AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true });
+
+      // Add data-aos to all .card elements automatically
+      document.querySelectorAll(".card").forEach((el, index) => {
+        el.setAttribute("data-aos", "fade-up");
+        el.setAttribute("data-aos-delay", (index + 1) * 100);
+      });
+    </script>
+  </body>
+</html>
